@@ -2,6 +2,8 @@ from imageai.Prediction import ImagePrediction
 import os
 execution_path=os.getcwd()
 
+#test
+
 prediction = ImagePrediction()
 prediction.setModelTypeAsDenseNet()
 prediction.setModelPath(os.path.join(execution_path, "DenseNet-BC-121-32.h5"))
