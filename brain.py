@@ -1,14 +1,13 @@
 from imageai.Prediction import ImagePrediction
-import os
-execution_path=os.getcwd()
-
+from os import getcwd,path
+execution_path=getcwd()
 #test
 
 prediction = ImagePrediction()
 prediction.setModelTypeAsDenseNet()
-prediction.setModelPath(os.path.join(execution_path, "DenseNet-BC-121-32.h5"))
+prediction.setModelPath(path.join(execution_path, "DenseNet-BC-121-32.h5"))
 prediction.loadModel()
 
-predictions, probabilities = prediction.predictImage(os.path.join(execution_path, "giraffe.jpg"), result_count=5 )
+predictions, probabilities = prediction.predictImage(path.join(execution_path, "giraffe.jpg"), result_count=5 )
 for eachPrediction, eachProbability in zip(predictions, probabilities):
     print(eachPrediction , " : " , eachProbability)
